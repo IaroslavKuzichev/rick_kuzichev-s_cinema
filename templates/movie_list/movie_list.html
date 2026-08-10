@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+  Список фильмов
+{% endblock %}
+{% block content %}
+  {% for movie in movies %}
+    <article class="mb-5">
+      <div class="card" style="width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+          <small>
+            {{ movie.genre movie.year }}
+          </small>
+          </h6>
+          <p class="card-text">{{ movie.description|truncatewords:10 }}</p>
+          <a href="{% url 'movie_list:movie_detail' post.id %}" class="card-link">Подробнее</a>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+{% endblock %}
