@@ -27,7 +27,7 @@ class Actor(models.Model):
         return self.name
 
 
-class Role(models.Model):
+class Character(models.Model):
     name = models.CharField(max_length=256, verbose_name='Персонаж')
     actor = models.ForeignKey(
         Actor,
@@ -41,8 +41,8 @@ class Role(models.Model):
     )
 
     class Meta:
-        verbose_name = 'роль'
-        verbose_name_plural = 'Роли'
+        verbose_name = 'персонаж'
+        verbose_name_plural = 'Персонажи'
 
     def __str__(self):
         return self.name

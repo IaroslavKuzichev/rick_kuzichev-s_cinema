@@ -1,16 +1,20 @@
 <header>
-  <nav>
-    <ul>
-      <li>
-        <a href = "{% url 'homepage:index' %}">
-          Главная
-        </a>
-      </li>
-      <li>
-        <a href = "{% url 'movie_list:movie_list' %}">
-          Список фильмов
-        </a>
-      </li>
-    </ul>
+  <nav class="navbar navbar-light" style="background-color: lightskyblue">
+    <div class="container">
+      {% with request.resolver_match.view_name as view_name %}
+        <ul class="nav  nav-pills">
+          <li class="nav-item">
+            <a class="nav-link {% if view_name == 'homepage:index' %} text-white {% endif %}" href="{% url 'homepage:index' %}">
+              Главная
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if view_name == 'movie_list:movie_list' %} text-white {% endif %}" href="{% url 'movie_list:movie_list' %}">
+              Список фильмов
+            </a>
+          </li>
+        </ul>
+      {% endwith %}
+    </div>
   </nav>
 </header>
