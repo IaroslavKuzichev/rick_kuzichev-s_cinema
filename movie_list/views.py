@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.conf import settings
-from .models import Movie, Role
+from .models import Movie, Character
 
 # Create your views here.
 def movie_list(request):

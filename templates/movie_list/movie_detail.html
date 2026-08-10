@@ -3,7 +3,7 @@
   {{ movie.title }}
 {% endblock %}
 {% block content %}
-  <article class="mb-5">
+  <div class="col d-flex justify-content-center">
     <div class="card" style="width: 40rem;">
       <div class="card-body">
         <h3 class="card-title">{{ movie.title }}</h3>
@@ -15,5 +15,5 @@
         <p class="card-text">{{ movie.description }}</p>
       </div>
     </div>
-  </article>
+  </div>
 {% endblock %}

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-kjng7m731#jdhe(n#s5a-w)$#15dnb((b=80=gc-l1lbpr@%vu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 MEDIA_ROOT = BASE_DIR / 'images' 
 MEDIA_URL = 'images/'
@@ -35,6 +35,7 @@ MEDIA_URL = 'images/'
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'movie_list.apps.MovieListConfig',
+    'django_bootstrap5',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -108,11 +109,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 

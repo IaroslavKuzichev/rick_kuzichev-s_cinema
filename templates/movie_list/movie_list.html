@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
   {% for movie in movies %}
-    <article class="mb-5">
+    <div class="col d-flex justify-content-center">
       <div class="card" style="width: 40rem;">
         <div class="card-body">
           <h5 class="card-title">{{ movie.title }}</h5>
@@ -17,6 +17,6 @@
           <a href="{% url 'movie_list:movie_detail' movie.id %}" class="card-link">Подробнее</a>
         </div>
       </div>
-    </article>
+    </div>
   {% endfor %}
 {% endblock %}
