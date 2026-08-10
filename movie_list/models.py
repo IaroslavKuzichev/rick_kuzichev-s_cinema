@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Movie(models.Model):
-    title = models.CharField(max_length=256, verbose_name='Заголовок')
+    title = models.CharField(max_length=256, verbose_name='Название')
     description = models.TextField(verbose_name='Описание')
     genre = models.CharField(max_length=256, verbose_name='Жанр')
     year = models.IntegerField(verbose_name='Год')
@@ -17,13 +17,14 @@ class Movie(models.Model):
 
 class Actor(models.Model):
     name = models.CharField(max_length=256, verbose_name='Имя')
+    portrait = models.ImageField(null=True, verbose_name='Изображение')
 
     class Meta:
         verbose_name = 'актёр'
         verbose_name_plural = 'Актёры'
 
     def __str__(self):
-        return self.title
+        return self.name
 
 
 class Role(models.Model):
@@ -44,4 +45,4 @@ class Role(models.Model):
         verbose_name_plural = 'Роли'
 
     def __str__(self):
-        return self.title
+        return self.name
