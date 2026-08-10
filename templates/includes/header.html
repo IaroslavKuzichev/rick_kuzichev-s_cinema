@@ -2,12 +2,12 @@
   <nav>
     <ul>
       <li>
-        <a href = "index.html">
+        <a href = "{% url 'homepage:index' %}">
           Главная
         </a>
       </li>
       <li>
-        <a href = "movie_list.html">
+        <a href = "{% url 'movie_list:movie_list' %}">
           Список фильмов
         </a>
       </li>

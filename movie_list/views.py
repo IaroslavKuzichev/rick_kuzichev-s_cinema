@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.conf import settings
 from .models import Movie, Role
 
@@ -11,7 +11,11 @@ def movie_list(request):
 
 def movie_detail(request, movie_id):
     template = 'movie_list/movie_detail.html'
-    context = dict()
+    movie = get_object_or_404(
+        Movie,
+        id=movie_id
+    )
+    context = {'movie': movie}
     return render(request, template, context)
 
 def display_portrait(request, image_name):
