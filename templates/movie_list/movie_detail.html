@@ -16,4 +16,21 @@
       </div>
     </div>
   </div>
+  {% for character in characters %}
+    <div class="col d-flex justify-content-center">
+      <div class="card" style="width: 40rem;">
+        <div class="container" style="height: 300px;">  
+          <div class="row align-items-center h-100">
+            <div class="col">
+              <img src="../../images/{{ character.actor.portrait }}" height="250">
+            </div>  
+            <div class="col">  
+              <h4 class="card-title">{{ character.actor }}</h4>
+              <h5 class="card-subtitle mb-2 text-muted">{{ character.name }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 {% endblock %}

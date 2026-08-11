@@ -8,5 +8,10 @@ urlpatterns = [
         '',
         views.index,
         name='index'
+    ),
+    path(
+        'images/<str:image_name>/',
+        views.display_portrait,
+        name='display_portrait'
     )
 ]

@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from django.conf import settings
 from .models import Movie, Character
 
 # Create your views here.
@@ -15,10 +14,8 @@ def movie_detail(request, movie_id):
         Movie,
         id=movie_id
     )
-    context = {'movie': movie}
-    return render(request, template, context)
-
-def display_portrait(request, image_name):
-    template = 'movie_list/image_view.html'
-    context = {'image_name': image_name, 'root': settings.MEDIA_ROOT}
+    characters = Character.objects.select_related('actor').filter(
+        movie=movie_id
+    )
+    context = {'movie': movie, 'characters': characters}
     return render(request, template, context)
