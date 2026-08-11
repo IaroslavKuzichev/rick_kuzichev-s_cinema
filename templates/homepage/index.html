@@ -1,5 +1,35 @@
 {% extends "base.html" %}
-{% block title %}Кинотеатр Рика Кузичева{% endblock %}
+{% block title %}Кинотеатр Ярослава Кузичева{% endblock %}
 {% block content %}
-  <h1>Главная</h1>
+  <div class="container">
+    <div class="col d-flex justify-content-center">
+      <div class="card" style="width: 40rem;">
+          <div class="card-body">
+            <div class="container" style="height: 300px;">  
+              <div class="row align-items-center h-100">
+                <div class="col">
+                  <img src="images/Iaroslav_Kuzichev.jpg" height="250">
+                </div>
+                <div class="col">
+                  <h1>Ярослав Кузичев</h1>
+                  <p>
+                    Российский независимый кинорежиссёр и сценарист.
+                    Известен своими разнообразными сюжетами, глубокими персонажами 
+                    и проработанными мирами.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h1 class="border-bottom text-center py-3">
+      Избранная фильмография
+    </h1>
+    {% for movie in selected_movies %}
+      {% include 'includes/movie_card.html' %}
+    {% endfor %}
+  </div>
 {% endblock %}

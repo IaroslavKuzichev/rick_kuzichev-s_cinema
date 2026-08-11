@@ -4,7 +4,7 @@ from .models import Movie, Character
 # Create your views here.
 def movie_list(request):
     template = 'movie_list/movie_list.html'
-    movies = Movie.objects.order_by('year')[::-1]
+    movies = Movie.objects.order_by('year')
     context = {'movies': movies}
     return render(request, template, context)
 
@@ -16,6 +16,6 @@ def movie_detail(request, movie_id):
     )
     characters = Character.objects.select_related('actor').filter(
         movie=movie_id
-    )
+    ).order_by('actor__name')
     context = {'movie': movie, 'characters': characters}
     return render(request, template, context)
