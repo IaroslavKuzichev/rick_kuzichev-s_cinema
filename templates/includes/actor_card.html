@@ -1,0 +1,20 @@
+<article class="mb-5">
+  <div class="col d-flex justify-content-center">
+    <div class="card" style="width: 35rem;">
+      <div class="card-body">
+        <h4 class="card-title">{{ actor.name }}</h4>
+        <div class="container" style="height: 300px;">  
+          <div class="row align-items-center h-100">  
+            <div class="col"> 
+              <img src="../../images/{{ actor.portrait }}" height="250">
+            </div>
+            <div class="col"> 
+              <p class="card-text">{{ actor.bio|truncatewords:15 }}</p>
+              <a href="{% url 'actor_list:actor_detail' actor.id %}" class="card-link">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

@@ -12,6 +12,11 @@
             <a class="nav-link {% if view_name == 'movie_list:movie_list' %} text-white {% endif %}" href="{% url 'movie_list:movie_list' %}">
               Список фильмов
             </a>
+          <li class="nav-item">
+            <a class="nav-link {% if view_name == 'actor_list:actor_list' %} text-white {% endif %}" href="{% url 'actor_list:actor_list' %}">
+              Список актёров
+            </a>
+          </li>
           </li>
         </ul>
       {% endwith %}

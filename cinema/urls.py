@@ -22,5 +22,6 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('homepage.urls', namespace='homepage')),
     path('movies/', include('movie_list.urls', namespace='movie_list')),
+    path('actors/', include('actor_list.urls', namespace='actor_list')),
     path('admin/', admin.site.urls)
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}
+  Кинотеатр Ярослава Кузичева — {{ actor.name }}
+{% endblock %}
+{% block content %}
+  <h2 class="text-center border-bottom py-2">{{ actor.name }}</h2>
+  <div class="col d-flex justify-content-center">
+    <div class="card" style="width: 35rem;">
+      <div class="card-body">
+        <div class="container">  
+          <div class="row align-items-top h-100">
+            <div class="col">
+              <img src="../../images/{{ actor.portrait }}" height="300">
+            </div>
+            <div class="col">
+              <h4>Биография</h4>
+              <p class="card-text">{{ actor.bio}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="border-bottom text-center py-2">
+    Роли
+  </h2>
+  {% for role in roles %}
+    <div class="col d-flex justify-content-center">
+      <div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{ role.name }}</h4>
+          <h5 class="card-subtitle mb-2 text-muted">{{ role.movie.title}}</h5>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

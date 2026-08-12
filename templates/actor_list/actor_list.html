@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}
+  Кинотеатр Ярослава Кузичева — Список актёров
+{% endblock %}
+{% block content %}
+  {% for actor in actors %}
+    {% include 'includes/actor_card.html' %}
+  {% endfor %}
+{% endblock %}
