@@ -17,6 +17,6 @@ def actor_detail(request, actor_id):
     )
     roles = Character.objects.filter(
         actor=actor_id
-    )
+    ).order_by('name')
     context = {'actor': actor, 'roles': roles}
     return render(request, template, context)

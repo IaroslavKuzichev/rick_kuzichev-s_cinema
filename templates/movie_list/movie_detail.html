@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
   <div class="col d-flex justify-content-center">
-    <div class="card" style="width: 40rem;">
+    <div class="card" style="width: 35rem;">
       <div class="card-body">
         <h3 class="card-title">{{ movie.title }}</h3>
         <h4 class="card-subtitle mb-2 text-muted">
@@ -18,14 +18,19 @@
   </div>
   {% for character in characters %}
     <div class="col d-flex justify-content-center">
-      <div class="card" style="width: 40rem;">
-        <div class="container" style="height: 300px;">  
+      <div class="card" style="width: 35rem;">
+        <div class="container" style="height: 350px;">  
           <div class="row align-items-center h-100">
             <div class="col">
-              <img src="../../images/{{ character.actor.portrait }}" height="250">
+              <img src="../../images/{{ character.actor.portrait }}" height="300">
             </div>  
             <div class="col">  
-              <h4 class="card-title">{{ character.actor }}</h4>
+              <h4 class="card-title">
+                <a href="{% url 'actor_list:actor_detail' character.actor.id %}" 
+                style="color: inherit; text-decoration: none;" class="card-link">
+                  {{ character.actor }}
+                </a>
+              </h4>
               <h5 class="card-subtitle mb-2 text-muted">{{ character.name }}</h5>
             </div>
           </div>
