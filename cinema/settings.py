@@ -35,6 +35,7 @@ MEDIA_URL = 'images/'
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'movie_list.apps.MovieListConfig',
+    'actor_list.apps.ActorListConfig',
     'django_bootstrap5',
     'django.contrib.admin',
     'django.contrib.auth',

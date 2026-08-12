@@ -1,4 +1,5 @@
 from django.db import models
+from actor_list.models import Actor
 
 # Create your models here.
 class Movie(models.Model):
@@ -15,23 +16,12 @@ class Movie(models.Model):
         return self.title
 
 
-class Actor(models.Model):
-    name = models.CharField(max_length=256, verbose_name='Имя')
-    portrait = models.ImageField(null=True, verbose_name='Изображение')
-
-    class Meta:
-        verbose_name = 'актёр'
-        verbose_name_plural = 'Актёры'
-
-    def __str__(self):
-        return self.name
-
-
 class Character(models.Model):
     name = models.CharField(max_length=256, verbose_name='Персонаж')
     actor = models.ForeignKey(
         Actor,
-        on_delete=models.CASCADE,
+        null=True,
+        on_delete=models.SET_NULL,
         verbose_name='Актёр'
     )
     movie = models.ForeignKey(
