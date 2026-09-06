@@ -11,6 +11,7 @@ class Movie(models.Model):
     class Meta:
         verbose_name = 'фильм'
         verbose_name_plural = 'Фильмы'
+        ordering = ['title']
 
     def __str__(self):
         return self.title
@@ -33,6 +34,7 @@ class Character(models.Model):
     class Meta:
         verbose_name = 'персонаж'
         verbose_name_plural = 'Персонажи'
+        ordering = ['name']
 
     def __str__(self):
         return self.name

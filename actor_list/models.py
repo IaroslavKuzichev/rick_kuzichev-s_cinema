@@ -10,6 +10,7 @@ class Actor(models.Model):
     class Meta:
         verbose_name = 'актёр'
         verbose_name_plural = 'Актёры'
+        ordering = ['name']
 
     def __str__(self):
         return self.name
