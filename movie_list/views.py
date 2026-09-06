@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from .models import Movie, Character
-from .forms import MovieForm
+from .forms import MovieForm, CharacterForm
 
 # Create your views here.
 def movie_list(request):
@@ -24,6 +24,14 @@ def movie_detail(request, movie_id):
 def movie_create(request):
     template = 'movie_list/movie_form.html'
     form = MovieForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context = {'form': form}
+    return render(request, template, context)
+
+def character_create(request):
+    template = 'movie_list/character_form.html'
+    form = CharacterForm(request.POST or None)
     if form.is_valid():
         form.save()
     context = {'form': form}

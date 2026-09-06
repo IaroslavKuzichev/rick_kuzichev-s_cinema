@@ -2,13 +2,13 @@
 {% load django_bootstrap5 %}
 
 {% block title %}
-  Добавить новый фильм
+  Добавить нового персонажа
 {% endblock %}
 
 {% block content %}
    <div class="card col-4">
     <div class="card-header">
-      Описание нового фильма
+      Описание нового персонажа
     </div>
     <div class="card-body">
       <form method="post">
@@ -18,7 +18,7 @@
       </form>
       {% with data=form.instance %}
         {% if form.is_valid %}
-          <h3>Фильм {{ data.title }} добавлен</h3>
+          <h3>Персонаж{{ data.title }} добавлен</h3>
         {% endif %}
       {% endwith %}
     </div>

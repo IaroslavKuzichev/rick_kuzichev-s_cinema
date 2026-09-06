@@ -15,8 +15,13 @@ urlpatterns = [
         name='movie_detail'
     ),
     path(
-        'create/',
+        'create/movie/',
         views.movie_create,
         name='movie_create'
-    )
+    ),
+    path(
+        'create/character/',
+        views.character_create,
+        name='character_create'
+        )
 ]
