@@ -138,3 +138,6 @@ MAILERS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_REDIRECT_URL = 'homepage:index'
+LOGOUT_REDIRECT_URL = 'homepage:index'
+

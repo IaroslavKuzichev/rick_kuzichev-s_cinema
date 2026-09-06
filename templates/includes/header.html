@@ -17,7 +17,38 @@
               Список актёров
             </a>
           </li>
-          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link {% if view_name == 'actor_list:actor_create' %} text-white {% endif %}" href="{% url 'actor_list:actor_create' %}">
+                Добавить актёра
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if view_name == 'movie_list:movie_create' %} text-white {% endif %}" href="{% url 'movie_list:movie_create' %}">
+                Добавить фильм
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if view_name == 'movie_list:character_create' %} text-white {% endif %}" href="{% url 'movie_list:character_create' %}">
+                Добавить персонажа
+              </a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <span class="navbar-text"><b>{{ user.username }}</b></span>|
+              <form method="post" action="{% url 'logout' %}" class="d-flex align-items-center m-0 p-0">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-link nav-link p-0 border-0">
+                  Выйти
+                </button>
+              </form>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">
+                Войти
+              </a>
+            </li>
+          {% endif %}
         </ul>
       {% endwith %}
     </div>
