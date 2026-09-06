@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+  Описать нового актёра(актрису)
+{% endblock %}
+
+{% block content %}
+  <!-- Место для HTML-формы -->
+   <div class="card col-4">
+    <div class="card-header">
+      Описание нового актёра(актрисы)
+    </div>
+    <div class="card-body">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% bootstrap_button button_type="submit" content="Отправить" %}
+      </form>
+      {% with data=form.instance %}
+        {% if form.is_valid %}
+          <h3>Актёр(актриса) {{ data.name }} добавлен(а)</h3>
+        {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+{% endblock %}

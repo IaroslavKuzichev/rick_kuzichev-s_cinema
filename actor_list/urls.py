@@ -13,5 +13,10 @@ urlpatterns = [
         '<int:actor_id>/',
         views.actor_detail,
         name='actor_detail'
-    )
+    ),
+    path(
+            'create/',
+            views.actor_create,
+            name='actor_create'
+        )
 ]
