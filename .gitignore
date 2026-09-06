@@ -79,7 +79,6 @@ target/
 
 
 ### Django ###
-db.sqlite3
 *.log
 *.pot
 *.pyc
@@ -87,3 +86,4 @@ __pycache__/
 local_settings.py
 
 .env
+db.sqlite3
