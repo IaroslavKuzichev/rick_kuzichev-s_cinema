@@ -24,14 +24,9 @@ def actor_detail(request, actor_id):
 
 def actor_create(request, actor_id=None):
     template = 'actor_list/actor_form.html'
-    if actor_id is not None:
-        instance = get_object_or_404(Actor, id=actor_id)
-    else:
-        instance = None
     form = ActorForm(
         request.POST or None,
         files=request.FILES or None,
-        instance=instance
     )
     if form.is_valid():
         form.save()
